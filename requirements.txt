@@ -1,0 +1,12 @@
+# --- Framework ---
+fastapi==0.119.1
+uvicorn==0.38.0
+
+# --- Database ---
+SQLAlchemy==2.0.44
+asyncpg==0.30.0
+
+# --- Others
+alembic==1.17.0
+pydantic-settings==2.11.0
+python-dotenv==1.1.1
