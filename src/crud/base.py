@@ -14,20 +14,32 @@ class CRUDBase:
             session: AsyncSession
         ):
         building = creating_form.dict()
-        info = self.model(**building)
-        session.add(info)
+        result = self.model(**building)
+        session.add(result)
         await session.commit()
-        await session.refresh(info)
-        return info 
+        await session.refresh(result)
+        return result 
     
 
     async def get(
             self,
+            id,
+            session: AsyncSession
+    ):
+        info = await session.execute(
+            select(self.model)
+            .where(self.model.id == id)
+        )
+        result = info.scalars().first()
+        return result
+
+    async def get_multi(
+            self,
             session: AsyncSession,            
         ):
         info = await session.execute(select(self.model))
-        info = info.scalars().all()
-        return info
+        result = info.scalars().all()
+        return result
     
     
     async def update(

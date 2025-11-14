@@ -37,17 +37,17 @@ async def get_building_by_name(
 async def get_all_building(
    session: AsyncSession = Depends(async_session)
 ):
-   info = await building_crud.get(session)
+   info = await building_crud.get_multi(session)
    return info
 
 
-@router.get('/{building_id}/')
-async def building_info(
-   building_id: int,
+@router.get('/{name}/')
+async def get_all_organization_on_building(
+   building_name: str,
    session: AsyncSession = Depends(async_session)
 ):
-   info = await cheking_building_exist(
-      building_id, session
+   info = await cheking_building_name_exist(
+      building_name, session
    )
    return info
 

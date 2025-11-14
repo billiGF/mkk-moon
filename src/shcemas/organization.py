@@ -25,3 +25,8 @@ class OrganizationRM(OrganizationBase):
 
     class Config:
         from_attributes=True
+
+
+class OrganizationRESPONSE(BaseModel):
+    id: int
+    name: str

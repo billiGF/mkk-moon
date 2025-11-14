@@ -30,6 +30,7 @@ class BUILDINGCrud(CRUDBase):
     ):
         result = await session.execute(
             select(Building)
+            .options(selectinload(Building.organizations))
             .where(Building.name == building_name)
         )
         result = result.scalars().first()

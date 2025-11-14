@@ -1,5 +1,5 @@
 from typing import Optional
-from pydantic import BaseModel, validator, root_validator
+from pydantic import BaseModel, validator
 
 
 
@@ -9,6 +9,11 @@ class BuildingBase(BaseModel):
     longitude: int
     latitude: int
 
+    @validator('address')
+    def validating_address(value):
+        if "г" not in value.split() or 'у' not in value.split():
+            raise ValueError("Перед городом и улицы должны стоять два значение: г-город у-улица  ")
+        return value
     
 class BuildingCreate(BuildingBase):
     pass
