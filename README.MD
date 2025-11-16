@@ -21,11 +21,13 @@ sudo apt install docker.io docker-compose -y
 
 
 
+```
 # Running the Project
-## Go To branc mmk-moon
+### Go To branc mmk-moon
 ```
+RUN 
 docker-compose up
-THEN GO TO http://localhost:8000
-```
+THEN GO TO 
+http://localhost:8000
 
 
