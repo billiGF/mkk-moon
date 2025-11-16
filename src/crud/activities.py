@@ -5,14 +5,11 @@ from sqlalchemy import select
 from sqlalchemy.orm import selectinload
 
 
-class ACTIVITIESPRODUCTBase(CRUDBase):
-    
-    # async def get_activities_name(
-    #         name: str,
-    #         session: AsyncSession
-    # ):
 
-    pass
+class ACTIVITIESPRODUCTBase(CRUDBase):
+        pass
+
+    
 
 class ACTIVITIESBase(CRUDBase):
     async def get_activities_id(

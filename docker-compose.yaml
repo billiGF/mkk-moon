@@ -1,0 +1,9 @@
+version: "3.0"
+
+services:
+  api:
+    build: .
+    env_file:
+      - .env.example
+    ports:
+      - "8000:8000"
