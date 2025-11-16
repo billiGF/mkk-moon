@@ -1,32 +1,31 @@
-# 🚀 FastAPI + aiosqlite + Docker Compose
+# FastAPI Project (Docker)
 
-This project is a backend API built with **FastAPI** and **aiosqlite** as the database.  
-Everything runs inside **Docker** using `docker-compose`.
-
----
-
-## 🔧 Requirements
-
-Install:
-
-- **Docker**: https://docs.docker.com/get-docker/
-- **Docker Compose**: included in Docker Desktop
+This project is built with:
+- FastAPI
+- AioSQLite (SQLite async database)
+- Docker
+- Docker Compose
 
 ---
 
+## 🚀 How to Install Docker
+
+### Windows / macOS
+Download Docker Desktop:
+https://www.docker.com/get-started/
+
+### Linux (Ubuntu)
+```bash
+sudo apt update
+sudo apt install docker.io docker-compose -y
 
 
----
 
-## ▶️ Running the Project
-
-### 1️⃣ Build Docker images
-
-```sh
+# Running the Project
+## Go To branc mmk-moon
+```
 docker-compose up
-
-### Then Go to [text](http://localhost:8000/docs)
-
-
+THEN GO TO http://localhost:8000
+```
 
 
