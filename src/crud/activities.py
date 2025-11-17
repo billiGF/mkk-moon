@@ -20,8 +20,8 @@ class ACTIVITIESBase(CRUDBase):
             name: str,
             session: AsyncSession
     ):  
-        info = await session.execute(select(Activities).options(selectinload(Activities.organization)).where(
-            Activities.name == name
+        info = await session.execute(select(ActivitiesProduct).options(selectinload(ActivitiesProduct.organization)).where(
+            ActivitiesProduct.name == name
         ))
         result =  info.scalars().first()
         return result

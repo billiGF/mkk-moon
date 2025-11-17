@@ -22,9 +22,9 @@ engine = create_async_engine(settings.database_url)
 AsyncSessionLocal = sessionmaker(engine, class_=AsyncSession)
 
 
-async def async_session():
+async def async_session1():
     async with AsyncSessionLocal() as session:
         yield session
 
 
-async_session1 = Annotated[AsyncSession, Depends(async_session)]
+async_session = Annotated[AsyncSession, Depends(async_session1)]

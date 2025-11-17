@@ -8,18 +8,18 @@ organization_activities = Table(
     "organization_activities",
     Base.metadata,
     Column("organization_id", Integer, ForeignKey("organization.id")),
-    Column("activities_id", Integer, ForeignKey('activities.id'))
+    Column("activitiesproduct_id", Integer, ForeignKey("activitiesproduct.id"))
 )
 
 
 class ActivitiesProduct(Base):
     name = Column(String)
-    activities_id = Column(Integer, ForeignKey('activities.id'))
+    activities_id = Column(Integer, ForeignKey("activities.id"))
+    organization = relationship("Organization", secondary=organization_activities, back_populates="activitiesproduct")
 
 
 class Activities(Base):
     name = Column(String, unique=True)
-    activities_product = relationship(ActivitiesProduct, cascade='delete')
-    organization = relationship("Organization", secondary=organization_activities, back_populates='activities')
+    activities_product = relationship(ActivitiesProduct, cascade="delete")
 
 

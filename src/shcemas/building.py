@@ -6,8 +6,8 @@ from pydantic import BaseModel, validator
 class BuildingBase(BaseModel):
     name: str
     address: str
-    longitude: int
-    latitude: int
+    longitude: float
+    latitude: float
 
     @validator('address')
     def validating_address(value):
@@ -22,8 +22,8 @@ class BuildingCreate(BuildingBase):
 class BuildingUpdate(BuildingBase):
     name: Optional[str] = None
     address: Optional[str] = None
-    longitude: Optional[int] = None
-    latitude: Optional[int] = None
+    longitude: Optional[float] = None
+    latitude: Optional[float] = None
 
 
 class BuildingResponse(BaseModel):

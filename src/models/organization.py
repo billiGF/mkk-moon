@@ -10,6 +10,6 @@ class Organization(Base):
     phone_number = Column(JSON, default=[])
     building_id = Column(Integer, ForeignKey('building.id'), nullable=False)
     building = relationship("Building", back_populates="organizations")
-    activities = relationship("Activities", secondary=organization_activities, back_populates='organization')
+    activitiesproduct = relationship("ActivitiesProduct", secondary=organization_activities, back_populates='organization')
 
 

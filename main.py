@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from src.api.routers import main_router
-from logger import logger
+# from logger import logger
 
 
 
